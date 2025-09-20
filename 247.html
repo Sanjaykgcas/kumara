@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kumarappan</title>
+<link href="https://fonts.googleapis.com/css2?family=VCR+OSD+Mono&family=Arcade+Classic&display=swap" rel="stylesheet">
+<style>
+/* Retro Synthwave Background */
+body {
+  margin: 0;
+  font-family: 'Arcade Classic', monospace;
+  color: #05d9e8;
+  background: linear-gradient(135deg, #01012b, #1b4965, #ff2a6d, #05d9e8, #d81e5b);
+  background-size: 600% 600%;
+  animation: synthWave 15s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+  cursor: none;
+}
+@keyframes synthWave {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(1, 1, 43, 0.9);
+  padding: 10px 0;
+  z-index: 1000;
+  border-bottom: 4px solid #ff2a6d;
+  box-shadow: 0 0 15px #05d9e8;
+  text-align: center;
+}
+header h1 {
+  font-family: 'VCR OSD Mono', monospace;
+  font-size: 1.8rem;
+  color: #05d9e8;
+  text-shadow: 3px 3px 0 #ff2a6d;
+  margin: 0;
+}
+
+/* Audio Control Button */
+.audio-control {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #ff2a6d;
+  border-radius: 4px;
+  cursor: none;
+  box-shadow: 0 0 10px #05d9e8;
+  animation: audioGlow 1.5s ease-in-out infinite alternate;
+}
+.audio-control img {
+  width: 28px;
+  height: 28px;
+}
+@keyframes audioGlow {
+  0% {box-shadow: 0 0 10px #05d9e8;}
+  100% {box-shadow: 0 0 15px #ff2a6d;}
+}
+
+/* Top Butterfly Animation */
+.butterfly-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: #01012b;
+  z-index: 999;
+  overflow: hidden;
+}
+.butterfly {
+  position: absolute;
+  font-size: 20px;
+  color: #0052cc;
+  text-shadow: 0 0 5px #05d9e8;
+  animation: flyButterfly 6s linear infinite, flutter 1s ease-in-out infinite;
+}
+.butterfly:nth-child(1) {top: 20px; animation-delay: 0s;}
+.butterfly:nth-child(2) {top: 40px; animation-delay: 1s;}
+.butterfly:nth-child(3) {top: 60px; animation-delay: 2s;}
+.butterfly:nth-child(4) {top: 30px; animation-delay: 3s;}
+.butterfly:nth-child(5) {top: 50px; animation-delay: 4s;}
+@keyframes flyButterfly {
+  0% {left: -50px; transform: translateY(0) rotate(0deg);}
+  100% {left: 100vw; transform: translateY(20px) rotate(15deg);}
+}
+@keyframes flutter {
+  0%, 100% {transform: translateY(0) rotate(0deg);}
+  50% {transform: translateY(-10px) rotate(10deg);}
+}
+
+/* Mouse Cursor Animation */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1001;
+}
+.cursor-item {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0;
+  animation: trailFade 1s ease-out forwards;
+}
+.cursor-candle {color: #ff2a6d; text-shadow: 0 0 5px #05d9e8;}
+.cursor-cake {color: #05d9e8; text-shadow: 0 0 5px #ff2a6d;}
+.cursor-balloon {color: #d81e5b; text-shadow: 0 0 5px #0052cc;}
+@keyframes trailFade {
+  0% {opacity: 1; transform: translate(0, 0) scale(1);}
+  100% {opacity: 0; transform: translate(0, -20px) scale(0.5);}
+}
+
+/* Retro Frame with Four Parts */
+#retro-frame {
+  max-width: 1200px;
+  margin: 120px auto 20px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 6px solid #ff2a6d;
+  box-shadow: 0 0 20px #05d9e8, inset 0 0 15px #d81e5b;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+}
+#retro-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0.15) 0,
+    rgba(0, 0, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Part 1: Birthday Boy */
+.birthday-boy {
+  text-align: center;
+  padding: 20px;
+  background: rgba(1, 1, 43, 0.8);
+  border: 4px solid #05d9e8;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ff2a6d;
+  animation: neonPulse 2s ease-in-out infinite;
+}
+.top-image-container {
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border: 4px solid #05d9e8;
+  border-radius: 8px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px #ff2a6d;
+}
+.top-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.birthday-boy h1, .birthday-boy h2 {
+  font-family: 'VCR OSD Mono', monospace;
+  color: #ff2a6d;
+  text-shadow: 2px 2px 0 #01012b;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.birthday-boy h1 { font-size: 2rem; animation: typing 3s steps(40, end) forwards; }
+.birthday-boy h2 { font-size: 1.3rem; animation: typing 3s steps(40, end) forwards 1s; }
+.wishes p {
+  font-size: 1.2rem;
+  color: #05d9e8;
+  text-shadow: 1px 1px 0 #01012b;
+  margin: 10px 0;
+}
+@keyframes neonPulse {
+  0% {box-shadow: 0 0 15px #ff2a6d;}
+  50% {box-shadow: 0 0 25px #05d9e8;}
+  100% {box-shadow: 0 0 15px #ff2a6d;}
+}
+@keyframes typing {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
+/* Part 2: Photos */
+.photos-section {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 4px solid #d81e5b;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #05d9e8;
+}
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  position: relative;
+  z-index: 3;
+}
+.photo-card {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  border: 4px solid #ff2a6d;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealCard 1s ease forwards;
+  box-shadow: 0 0 10px #05d9e8;
+}
+.photo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #d81e5b;
+}
+.photo-card img { width: 100%; border-radius: 4px; }
+.caption {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #05d9e8;
+  text-shadow: 1px 1px 0 #01012b;
+}
+@keyframes revealCard {
+  0% {opacity: 0; transform: translateY(20px); clip-path: inset(100% 0 0 0);}
+  100% {opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0);}
+}
+.photo-card:nth-child(1) {animation-delay: 0.2s;}
+.photo-card:nth-child(2) {animation-delay: 0.4s;}
+.photo-card:nth-child(3) {animation-delay: 0.6s;}
+.photo-card:nth-child(4) {animation-delay: 0.8s;}
+.photo-card:nth-child(5) {animation-delay: 1.0s;}
+.photo-card:nth-child(6) {animation-delay: 1.2s;}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(1, 1, 43, 0.95);
+}
+.modal-content {
+  margin: 10% auto;
+  background: rgba(0, 0, 0, 0.8);
+  border: 4px solid #05d9e8;
+  border-radius: 8px;
+  padding: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px #ff2a6d;
+}
+.close {
+  color: #ff2a6d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #01012b;
+}
+.memory-text {
+  font-family: 'Arcade Classic', monospace;
+  font-size: 1.2rem;
+  color: #05d9e8;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+  text-shadow: 1px 1px 0 #01012b;
+}
+
+/* Part 3: Quotes with Candle Animations */
+.quotes-section {
+  position: relative;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 4px solid #05d9e8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ff2a6d;
+  overflow: hidden;
+}
+.quotes {
+  position: relative;
+  z-index: 3;
+}
+.quotes h3 {
+  font-family: 'VCR OSD Mono', monospace;
+  font-size: 1.2rem;
+  color: #d81e5b;
+  text-shadow: 2px 2px 0 #01012b;
+}
+.quotes p {
+  font-size: 1.2rem;
+  color: #05d9e8;
+  text-shadow: 1px 1px 0 #01012b;
+  margin: 10px 0;
+}
+.candle {
+  position: absolute;
+  font-size: 20px;
+  color: #ff2a6d;
+  text-shadow: 0 0 5px #05d9e8;
+  animation: flickerCandle 2s ease-in-out infinite;
+}
+.candle:nth-child(1) {left: 10%; top: 10%; animation-delay: 0s;}
+.candle:nth-child(2) {right: 10%; top: 20%; animation-delay: 0.5s;}
+.candle:nth-child(3) {left: 15%; bottom: 15%; animation-delay: 1s;}
+.candle:nth-child(4) {right: 15%; bottom: 10%; animation-delay: 1.5s;}
+@keyframes flickerCandle {
+  0%, 100% {opacity: 1; transform: translateY(0);}
+  50% {opacity: 0.7; transform: translateY(-10px);}
+}
+
+/* Video Section */
+.video-section {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 30px auto;
+  max-width: 700px;
+  border: 4px solid #d81e5b;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #05d9e8;
+}
+.video-section iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Instagram Button */
+.insta-btn {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-family: 'VCR OSD Mono', monospace;
+  font-size: 1rem;
+  color: #01012b;
+  background: #05d9e8;
+  border: 3px solid #ff2a6d;
+  border-radius: 6px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: 0 0 10px #ff2a6d;
+  transition: 0.3s;
+}
+.insta-btn:hover {
+  background: #ff2a6d;
+  color: #05d9e8;
+  box-shadow: 0 0 15px #05d9e8;
+}
+
+/* Part 4: Mentors & Students */
+.mentors-students {
+  padding: 20px;
+  background: rgba(1, 1, 43, 0.9);
+  border: 4px solid #ff2a6d;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #05d9e8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.teachers, .students {
+  position: relative;
+  animation: scrollUp 20s linear infinite;
+}
+.teachers {
+  font-family: 'VCR OSD Mono', monospace;
+  font-size: 1.2rem;
+  color: #ff2a6d;
+  text-shadow: 1px 1px 0 #01012b;
+  margin-bottom: 10px;
+}
+.students {
+  font-size: 1.1rem;
+  color: #05d9e8;
+  text-shadow: 1px 1px 0 #01012b;
+  line-height: 1.6;
+}
+@keyframes scrollUp {
+  0% {transform: translateY(100%);}
+  100% {transform: translateY(-100%);}
+}
+</style>
+</head>
+<body>
+<!-- Top Butterfly and Cursor Animation -->
+<div class="butterfly-container">
+  <span class="butterfly">🦋</span>
+  <span class="butterfly">🦋</span>
+  <span class="butterfly">🦋</span>
+  <span class="butterfly">🦋</span>
+  <span class="butterfly">🦋</span>
+</div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- Fixed Header -->
+<header>
+  <h1>🎉 Happy Birthday Kumarappan 🎉</h1>
+  <div class="audio-control" onclick="toggleAudio()">
+    <img id="audioIcon" src="https://img.icons8.com/ios-filled/50/ffffff/mute.png" alt="Audio Control">
+  </div>
+</header>
+
+<!-- Retro Frame with Four Parts -->
+<div id="retro-frame">
+  <!-- Part 1: Birthday Boy -->
+  <div class="birthday-boy">
+    <div class="top-image-container">
+      <img src="k4.jpg" alt="Kumarappan">
+    </div>
+    <h1>Happy Birthday Kumarappan</h1>
+    <h2>Cloud & DevOps Architect | 3rd BCA @ KG College</h2>
+    <div class="wishes">
+      <p>“Vanakkam Kumarappan! May your life shine bright!”</p>
+      <p>“Success is learning, dreaming, and never giving up!”</p>
+      <p>“Life is not perfect, but keep smiling & moving forward!”</p>
+      <p>“Always keep learning and debugging your life like a true programmer.”</p>
+    </div>
+  </div>
+
+  <!-- Part 2: Photos -->
+  <div class="photos-section">
+    <div class="photos" id="photoGrid">
+      <div class="photo-card" onclick="openModal(1); playAudioOnInteraction()"><img src="k9.jpg"><div class="caption">Freshman Year</div></div>
+      <div class="photo-card" onclick="openModal(2); playAudioOnInteraction()"><img src="k6.jpg"><div class="caption">Projects & Learning</div></div>
+      <div class="photo-card" onclick="openModal(3); playAudioOnInteraction()"><img src="k10.jpg"><div class="caption">Friendship & Fun</div></div>
+      <div class="photo-card" onclick="openModal(4); playAudioOnInteraction()"><img src="k5.jpg"><div class="caption">Achievements</div></div>
+      <div class="photo-card" onclick="openModal(5); playAudioOnInteraction()"><img src="k3.jpg"><div class="caption">Class</div></div>
+      <div class="photo-card" onclick="openModal(6); playAudioOnInteraction()"><img src="k7.jpg"><div class="caption">Candid Events</div></div>
+    </div>
+  </div>
+
+  <!-- Part 3: Quotes with Candle Animations -->
+  <div class="quotes-section">
+    <span class="candle">🕯️</span>
+    <span class="candle">🕯️</span>
+    <span class="candle">🕯️</span>
+    <span class="candle">🕯️</span>
+    <div class="quotes">
+      <h3>Life & Programmer Thoughts</h3>
+      <p>"Code your dreams into reality."</p>
+      <p>"Mistakes are proof that you are trying."</p>
+      <p>"Programming teaches patience and problem solving."</p>
+      <p>"Keep learning, keep growing."</p>
+      <p>"Life is a project; debug and improve continuously."</p>
+    </div>
+    <div class="video-section">
+      <h1>🎥 Special Moments 🎥</h1>
+      <iframe id="videoFrame" src="https://drive.google.com/file/d/1VV-u8tUS8zFSBk-Oyoisp4Sb9N3DscE_/preview" allow="autoplay" allowfullscreen></iframe>
+    </div>
+    <a class="insta-btn" href="https://www.instagram.com/kumarappan" target="_blank">Follow Kumarappan on Instagram</a>
+  </div>
+
+  <!-- Part 4: Mentors & Students -->
+  <div class="mentors-students">
+    <div class="teachers">Ragavi Mam, Gana Priya Mam</div>
+    <div class="students">
+      ABDUL WAHEED A • ABITHEESH M • ADHITHYAN R • ALWIN E • ANISHA S • ASHWINI E • DHARANEESH K • DHARSHANA S • DHARSHINI PRIYA D • GANGADHARAN J • GOKULAKRISHNAN S • GOWTHAM V M • HARISMITA R • HARIVATSA D • HEMAMALINI R • KAMALESH S • KANISHKA K • KASHINI M • KATHIRESH A • KHAILESH KUMAR S A • KIRUTHIKA M • KUMARAPPAN S • KUMARESH R • MADHUNISHA K • MADUMITHA M • MEGALA M • MOHANAM C M • OVIYA M G • PAVISH KUMAR S • PAVITHRA DEVI K G • PERUMAL PRADEEP S • PRATHVIRAJ D • RAHUL V • RANJITHA D • RISHI M • RITHICK D • RITIKA G • ROHINI R • SANDHIYA B • SANJAY A • SANJAY M • SANTHA RUBA P • SANTHOSHKUMAR S • SASITHAR E • SATHIYAPRIYA S • SHIVANESSH R S • SIDDHARTH A • SNEHA M • SOWNITH KISHOR P • SRI NANDHULAL U S • SRI SANJAYY S • SUDHARSHAN MYILSAMY • SUMITHRA S • SURYANARAYANA C P • TAMILARASU V • VASANTHAN A • VISHNUPRASATH R • YOKESHKUMAR S
+    </div>
+  </div>
+</div>
+
+<!-- Background Audio -->
+<audio id="bgAudio" src="bday wishes.mp3" loop></audio>
+
+<script>
+const memoryContent = {
+  1: "Freshman year excitement, new friends, first coding experiments and laughter.",
+  2: "Classroom adventures, group discussions, and learning teamwork through projects.",
+  3: "Friendship, fun moments, jokes, and celebrations that made college life joyful.",
+  4: "Achievements, competition wins, coding milestones, and project completions.",
+  5: "Hands-on coding projects, teamwork, and learning new technologies.",
+  6: "Festivals, college events, and candid moments captured forever."
+};
+const modalImages = {1:"k9.jpg", 2:"k6.jpg", 3:"k10.jpg", 4:"k5.jpg", 5:"k3.jpg", 6:"k7.jpg"};
+
+function shuffleCards() {
+  const grid = document.getElementById('photoGrid');
+  for (let i = grid.children.length; i >= 0; i--) {
+    grid.appendChild(grid.children[Math.random() * i | 0]);
+  }
+  const colors = ['#ff2a6d', '#05d9e8', '#d81e5b', '#ff0066'];
+  grid.querySelectorAll('.photo-card').forEach(card => {
+    card.style.borderColor = colors[Math.floor(Math.random() * colors.length)];
+  });
+}
+
+function openModal(id) {
+  document.getElementById('modal').style.display = 'block';
+  document.getElementById('modal-img').src = modalImages[id];
+  const textEl = document.getElementById('modal-text');
+  textEl.innerText = memoryContent[id];
+  textEl.style.opacity = 0;
+  textEl.style.transform = "translateY(15px)";
+  setTimeout(() => {
+    textEl.style.opacity = 1;
+    textEl.style.transform = "translateY(0)";
+  }, 50);
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+  shuffleCards();
+}
+
+function playAudioOnInteraction() {
+  const audio = document.getElementById('bgAudio');
+  const audioIcon = document.getElementById('audioIcon');
+  if (audio.paused) {
+    audio.play().then(() => {
+      audioIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/volume-up.png';
+    }).catch(e => {
+      console.log('Audio play failed:', e);
+    });
+  }
+}
+
+function toggleAudio() {
+  const audio = document.getElementById('bgAudio');
+  const audioIcon = document.getElementById('audioIcon');
+  if (audio.paused) {
+    audio.play().then(() => {
+      audioIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/volume-up.png';
+    }).catch(e => {
+      console.log('Audio play failed:', e);
+    });
+  } else {
+    audio.pause();
+    audioIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/mute.png';
+  }
+}
+
+function createCursorTrail(e) {
+  const cursorTrail = document.getElementById('cursorTrail');
+  const items = ['🕯️', '🎂', '🎈'];
+  const classes = ['cursor-candle', 'cursor-cake', 'cursor-balloon'];
+  const item = items[Math.floor(Math.random() * items.length)];
+  const itemClass = classes[items.indexOf(item)];
+  const span = document.createElement('span');
+  span.className = `cursor-item ${itemClass}`;
+  span.innerText = item;
+  span.style.left = `${e.clientX}px`;
+  span.style.top = `${e.clientY}px`;
+  cursorTrail.appendChild(span);
+  setTimeout(() => span.remove(), 1000);
+}
+
+window.onload = () => {
+  shuffleCards();
+  const audio = document.getElementById('bgAudio');
+  audio.volume = 0.3;
+  document.addEventListener('mousemove', createCursorTrail);
+};
+</script>
+
+</body>
+</html>
